@@ -4,128 +4,101 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Passe de Primeira</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Guia prático para tirar a CNH sem autoescola em 2026: as 7 etapas, custos reais e o novo sistema de pontos da prova prática.">
+<meta name="description" content="Vai tirar a CNH sem autoescola? A ordem exata das 7 etapas e os erros que fazem perder dinheiro e reprovar na prova prática. Guia em PDF, preço Black November até 30/11.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: faixa de asfalto no topo com placar de pontos ao vivo; corpo claro tipo concreto; placas amarelas como marcadores */
 :root{
   --concreto:#eef0ec; --papel:#ffffff; --asfalto:#1d2226; --tinta:#1d2226; --suave:#566069;
-  --placa:#f5c400; --placa-tinta:#1d2226; --linha:#d5d9d3;
-  --ok:#1f8a4c; --erro:#c8321f; --faixa:#ffffff;
+  --placa:#f5c400; --linha:#d5d9d3; --ok:#1f8a4c; --erro:#c8321f;
   --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
   --texto:"Barlow",Inter,"Segoe UI",Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --concreto:#15191c; --papel:#1f2529; --tinta:#eef0ec; --suave:#a3adb5; --linha:#333b41; --ok:#3fbf75; --erro:#ff6b55; color-scheme:dark}}
-:root[data-theme="dark"]{--concreto:#15191c; --papel:#1f2529; --tinta:#eef0ec; --suave:#a3adb5; --linha:#333b41; --ok:#3fbf75; --erro:#ff6b55; color-scheme:dark}
+html{color-scheme:light}
 *{box-sizing:border-box}
-body{background:var(--concreto);color:var(--tinta);font-family:var(--texto);font-size:17px;line-height:1.6}
+body{margin:0;background:var(--concreto);color:var(--tinta);font-family:var(--texto);font-size:17px;line-height:1.55}
+img{max-width:100%;height:auto;display:block}
 .wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0}
-h2{font-size:clamp(30px,5vw,44px);text-transform:uppercase;letter-spacing:.01em}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,5.5vw,44px);text-transform:uppercase}
 p{margin:0}
-a{color:inherit}
-.aviso{background:var(--placa);color:var(--placa-tinta);font-size:13px;font-weight:600;text-align:center;padding-block:7px}
-.aviso .wrap{padding-block:0}
+section{padding-block:48px}
+.aviso{background:var(--placa);color:var(--asfalto);font-size:13px;font-weight:600;text-align:center;padding-block:7px}
 
-/* HERO: asfalto */
-.hero{background:var(--asfalto);color:#f3f4f1;position:relative;overflow:hidden}
-.hero .wrap{padding-block:48px 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:22px;height:6px;background:repeating-linear-gradient(90deg,var(--placa) 0 46px,transparent 46px 82px);opacity:.9}
-.eyebrow{font-family:var(--display);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:15px;color:var(--placa)}
-.hero h1{font-size:clamp(44px,7.5vw,78px);font-weight:800;text-transform:uppercase;margin-top:10px}
+/* topo */
+.hero{background:var(--asfalto);color:#f3f4f1;padding-block:16px 30px}
+.hero .grid{display:grid;grid-template-columns:1fr;gap:14px;align-items:center}
+.eyebrow{font-family:var(--display);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:14px;color:var(--placa)}
+.hero h1{font-size:clamp(32px,8vw,68px);font-weight:800;text-transform:uppercase;margin-top:6px}
 .hero h1 em{font-style:normal;color:var(--placa)}
-.hero .lead{margin-top:16px;font-size:19px;color:#cfd4d0;max-width:34ch}
-.cta{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:var(--placa);color:var(--placa-tinta);font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none;padding:14px 26px;border-radius:6px;border:3px solid var(--placa);transition:transform .15s}
-.cta:hover{transform:translateY(-2px)}
-.cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
-.micro{margin-top:10px;font-size:14px;color:#aab2ad}
-
-/* Placar */
-.placar{background:#262c31;border:2px solid #3a4248;border-radius:12px;padding:20px;min-width:0}
-.placar h3{font-size:24px;text-transform:uppercase;color:#fff}
-.placar .sub{font-size:14px;color:#aab2ad;margin-top:4px}
-.medidor{margin-top:16px;display:grid;grid-template-columns:repeat(10,1fr);gap:4px}
-.medidor span{height:22px;border-radius:3px;background:#3a4248;transition:background .2s}
-.medidor span.on{background:var(--placa)}
-.medidor.estourou span.on{background:#ff6b55}
-.total{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;font-variant-numeric:tabular-nums}
-.total b{font-family:var(--display);font-size:46px;color:#fff;line-height:1}
-.veredito{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;padding:4px 12px;border-radius:4px;background:#1f8a4c;color:#fff}
-.veredito.reprova{background:#c8321f}
-.botoes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
-.botoes button{font-family:var(--texto);font-size:15px;font-weight:600;padding:10px 8px;border-radius:6px;border:1.5px solid #4a535a;background:transparent;color:#f3f4f1;cursor:pointer;text-align:left}
-.botoes button:hover{border-color:var(--placa)}
-.botoes button:focus-visible{outline:2px solid var(--placa);outline-offset:2px}
-.botoes button small{display:block;color:#aab2ad;font-weight:400;font-size:12.5px}
-.zerar{margin-top:10px;background:none;border:0;color:#aab2ad;text-decoration:underline;cursor:pointer;font-family:var(--texto);font-size:14px}
-.log{margin-top:8px;font-size:13px;color:#aab2ad;min-height:20px}
-
-/* Seções */
-section{padding-block:64px}
-section + section{border-top:1px solid var(--linha)}
-.cab{display:flex;gap:16px;align-items:center;margin-bottom:24px}
-.losango{flex:0 0 38px;height:38px;background:var(--placa);transform:rotate(45deg);border-radius:4px;border:3px solid var(--placa-tinta);display:flex;align-items:center;justify-content:center}
-.losango i{transform:rotate(-45deg);font-style:normal;font-family:var(--display);font-weight:800;font-size:20px;color:var(--placa-tinta)}
-.dados{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.dado{background:var(--papel);border:1px solid var(--linha);border-radius:10px;padding:20px;min-width:0}
-.dado b{display:block;font-family:var(--display);font-size:46px;line-height:1;font-variant-numeric:tabular-nums}
-.dado p{margin-top:8px;color:var(--suave);font-size:15.5px}
-.fonte{margin-top:14px;font-size:13px;color:var(--suave)}
-.texto{max-width:64ch;display:grid;gap:14px}
-.texto strong{color:var(--tinta)}
-
-.etapas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 28px;counter-reset:e}
-.etapas li{counter-increment:e;display:flex;gap:14px;align-items:flex-start;padding-block:12px;border-bottom:2px dashed var(--linha);min-width:0}
-.etapas li::before{content:counter(e);flex:0 0 34px;height:34px;border-radius:50%;background:var(--asfalto);color:var(--placa);font-family:var(--display);font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center}
-:root[data-theme="dark"] .etapas li::before{background:var(--placa);color:var(--placa-tinta)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .etapas li::before{background:var(--placa);color:var(--placa-tinta)}}
-.etapas b{display:block;font-size:17px}
-.etapas span{color:var(--suave);font-size:15.5px}
-
-.duas{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.lista li{padding-left:30px;position:relative}
-.lista.sim li::before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:800}
-.lista.nao li::before{content:"✕";position:absolute;left:0;top:0;color:var(--erro);font-weight:800}
-.lista-titulo{font-family:var(--display);font-size:24px;text-transform:uppercase;margin-bottom:12px}
-
-/* Oferta */
-.oferta{background:var(--papel);border:3px solid var(--tinta);border-radius:14px;padding:32px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
-.preco{text-align:center}
-.preco .de{font-size:15px;color:var(--suave)}
-.preco .valor{font-family:var(--display);font-weight:800;font-size:76px;line-height:1;font-variant-numeric:tabular-nums}
-.preco .valor sup{font-size:30px;vertical-align:top;margin-right:4px}
-.preco .cta{margin-top:16px;width:100%;justify-content:center}
-.preco .micro{color:var(--suave)}
-.garantia{display:flex;gap:12px;align-items:flex-start;margin-top:18px;font-size:15px;color:var(--suave)}
-.garantia b{color:var(--tinta)}
-.extras{margin-top:18px;display:grid;gap:10px}
-.extra{border:2px dashed var(--linha);border-radius:10px;padding:12px 14px;font-size:15.5px}
-.extra b{font-family:var(--display);font-size:19px;text-transform:uppercase}
-
-details{border-bottom:1px solid var(--linha);padding-block:14px}
-summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
-summary::after{content:"+";font-family:var(--display);font-size:26px;line-height:1}
-details[open] summary::after{content:"–"}
-details p{margin-top:10px;color:var(--suave);max-width:64ch}
-summary:focus-visible{outline:2px solid var(--placa);outline-offset:4px}
-
-footer{background:var(--asfalto);color:#aab2ad;font-size:13.5px}
-footer .wrap{padding-block:30px;display:grid;gap:8px}
-
-@media (max-width:820px){
-  .hero .wrap,.oferta,.duas{grid-template-columns:1fr}
-  .dados{grid-template-columns:1fr}
-  .etapas{grid-template-columns:1fr}
-  .oferta{padding:22px}
+.hero .lead{margin-top:8px;font-size:16px;line-height:1.45;color:#cfd4d0}
+.oferta-topo{background:var(--papel);color:var(--tinta);border-radius:14px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.oferta-topo .lado{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
+.oferta-topo .lado img{width:96px}
+.legenda-topo{font-size:14px;color:var(--suave);margin-top:6px}
+.cartao{background:var(--papel);color:var(--tinta);border-radius:14px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.nome{font-weight:700;font-size:15px;line-height:1.3}
+.preco{font-family:var(--display);font-weight:800;font-size:46px;line-height:1;margin-top:6px;color:var(--ok)}
+.preco small{display:block;font-size:15px;color:var(--suave);font-family:var(--texto);font-weight:500;margin-top:2px}
+.cta{display:flex;justify-content:center;align-items:center;text-align:center;width:100%;min-height:56px;margin-top:12px;padding:12px 14px;border-radius:12px;background:var(--placa);color:var(--asfalto);font-family:var(--display);font-weight:800;font-size:clamp(18px,5vw,22px);line-height:1.1;text-transform:uppercase;text-decoration:none;letter-spacing:0;box-shadow:0 4px 0 #b58f00}
+.cta:active{transform:translateY(2px);box-shadow:0 2px 0 #b58f00}
+.micro{font-size:13px;color:var(--suave);margin-top:8px;text-align:center}
+.vsl{margin:20px auto 0;max-width:420px}
+.vsl video{width:100%;height:auto;border-radius:14px;display:block;background:#0F1B2D;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.vsl p{font-size:13px;color:#cfd4d0;text-align:center;margin-top:8px}
+@media (min-width:860px){
+  .hero .grid{grid-template-columns:1.1fr .9fr;gap:36px}
+  .oferta-topo .lado{grid-template-columns:180px 1fr}.oferta-topo .lado img{width:180px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
-</style>
 
-<style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+/* blocos */
+.dados{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px}
+.dado{background:var(--papel);border-left:6px solid var(--erro);border-radius:10px;padding:14px 16px}
+.dado b{font-family:var(--display);font-size:34px;font-weight:800;display:block;line-height:1}
+.fonte{font-size:13px;color:var(--suave);margin-top:12px}
+.texto p+p{margin-top:12px}
+@media (min-width:760px){.dados{grid-template-columns:repeat(3,1fr)}}
+
+.carrossel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;margin-top:20px;-webkit-overflow-scrolling:touch}
+.folha{flex:0 0 82%;max-width:360px;scroll-snap-align:start;background:var(--papel);border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.12);margin:0}
+.folha img{border-bottom:1px solid var(--linha)}
+.folha figcaption{padding:12px 14px 14px;font-size:15px}
+.folha figcaption b{display:block;font-family:var(--display);font-size:21px;line-height:1.1;margin-bottom:4px}
+.dica-arraste{font-size:13px;color:var(--suave);margin-top:4px}
+.dispositivos{margin-top:22px;text-align:center}
+.dispositivos img{margin:0 auto;max-width:560px;width:100%}
+.dispositivos figcaption{font-size:14px;color:var(--suave);margin-top:6px}
+
+.lista{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.lista li{background:var(--papel);border-radius:10px;padding:12px 14px 12px 46px;position:relative}
+.lista li::before{content:"✓";position:absolute;left:14px;top:11px;width:22px;height:22px;border-radius:50%;background:var(--ok);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.lista.nao li::before{content:"✕";background:var(--erro)}
+.urgencia{background:var(--asfalto);color:#f3f4f1}
+.urgencia p{color:#cfd4d0;margin-top:12px}
+.pacote{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;margin-top:18px}
+.pacote ol{margin:0;padding-left:22px}
+.pacote li{margin-bottom:6px}
+@media (min-width:760px){.pacote{grid-template-columns:1fr 1fr}}
+.extras{margin-top:14px;font-size:15px;color:var(--suave)}
+.oferta .cartao{max-width:460px;margin:20px auto 0;text-align:center;border:3px solid var(--placa)}
+.garantia{display:flex;gap:14px;align-items:flex-start;background:var(--papel);border-radius:12px;padding:16px;margin-top:18px}
+.selo{flex:0 0 64px;height:64px;border-radius:50%;background:var(--ok);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;line-height:1}
+.selo b{font-size:28px}.selo span{font-size:12px}
+details{background:var(--papel);border-radius:10px;padding:12px 14px;margin-top:10px}
+summary{font-weight:700;cursor:pointer}
+details p{margin-top:8px}
+footer{background:var(--asfalto);color:#aab2ad;font-size:13px;padding-block:24px}
+.caixa-oferta{max-width:460px;margin:18px auto 0;border:3px solid var(--placa)}
+.lote{display:inline-block;background:var(--erro);color:#fff;font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;padding:3px 10px;border-radius:6px}
+.caixa-linha{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center;margin-top:10px}
+.caixa-linha img{width:72px}
+.depois{font-size:16px;color:var(--suave);margin-top:6px}
+.depois b{color:var(--tinta)}
+.prazo{color:var(--erro)}
+.hero .sub{margin-top:8px;font-size:17px;line-height:1.45;color:#cfd4d0}
+.urgencia .faixa-preco{margin-top:16px;font-size:17px;color:#f3f4f1}
+.urgencia .faixa-preco b{color:var(--placa);font-family:var(--display);font-size:26px}
+</style>
 <!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -137,149 +110,203 @@ fbq('init','1712974116427949');
 fbq('track','PageView');
 fbq('track','ViewContent',{content_name:'Passe de Primeira',value:19.90,currency:'BRL'});
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1712974116427949&ev=PageView&noscript=1"/></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1712974116427949&ev=PageView&noscript=1" alt=""></noscript>
 <!-- Fim Meta Pixel -->
 </head>
 <body>
 <div class="aviso"><div class="wrap">Material independente e educativo. Não é o aplicativo oficial nem tem ligação com governo ou Detran.</div></div>
 
+<!-- BLOCO 1 — Topo: headline + VSL + caixa de oferta -->
 <header class="hero">
   <div class="wrap">
-    <div>
-      <div class="eyebrow">CNH sem autoescola • regras 2026</div>
-      <h1>Tire sua CNH sozinho e <em>passe de primeira</em></h1>
-      <p class="lead">O guia que faz o papel da autoescola: a ordem certa das etapas, quanto você vai gastar de verdade e como funciona a nova prova prática por pontos.</p>
-      <a class="cta" href="#oferta" data-checkout>Quero o guia por R$ 19,90</a>
-      <p class="micro">PDF no seu e-mail logo após o pagamento • Pix ou cartão</p>
+    <span class="eyebrow">CNH sem autoescola • Regras 2026 • Black November</span>
+    <h1>Vai tirar a CNH sem autoescola? <em>Veja a ordem exata das 7 etapas</em></h1>
+    <p class="sub">e os erros que mais fazem a pessoa perder dinheiro em taxas e reprovar na prova prática.</p>
+    <div class="vsl">
+      <video src="vsl-venda-pagina.mp4" poster="vsl-venda-capa.jpg" controls playsinline preload="metadata" width="864" height="1080"></video>
+      <p>▶ Toque para assistir (com som)</p>
     </div>
-
-    <div class="placar" aria-labelledby="placar-t">
-      <h3 id="placar-t">Você passaria na prova prática?</h3>
-      <p class="sub">Toque nos erros e veja a conta da regra nova. O limite é 10 pontos.</p>
-      <div class="medidor" id="medidor" aria-hidden="true"></div>
-      <div class="total"><span><b id="pts">0</b> <span style="color:#aab2ad">de 10 pontos</span></span><span class="veredito" id="ver" role="status">Aprovado</span></div>
-      <div class="botoes">
-        <button type="button" id="b-leve" data-p="1" data-n="Leve">+ Leve (1)<small>ex.: pequena falha de sinalização</small></button>
-        <button type="button" id="b-media" data-p="2" data-n="Média">+ Média (2)<small>ex.: parar sobre a faixa</small></button>
-        <button type="button" id="b-grave" data-p="4" data-n="Grave">+ Grave (4)<small>ex.: virar sem dar seta</small></button>
-        <button type="button" id="b-gravissima" data-p="6" data-n="Gravíssima">+ Gravíssima (6)<small>ex.: não parar no PARE</small></button>
+    <div class="cartao caixa-oferta">
+        <span class="lote">Black November • lote de 50 unidades</span>
+        <div class="caixa-linha">
+          <img src="img/celular-mapa.webp" width="620" height="1208" alt="O guia aberto no celular, na página O mapa das 7 etapas" loading="lazy">
+          <div>
+            <p class="nome">Guia Passe de Primeira • PDF completo</p>
+            <p class="preco">R$ 19,90<small>pagamento único • menos que um lanche</small></p>
+            <p class="depois">Depois da Black November: <b style="white-space:nowrap">R$ 99,90</b></p>
+          </div>
+        </div>
+        <a class="cta" href="#oferta" data-checkout><span>Garantir minha cópia por <span style="white-space:nowrap">R$ 19,90</span></span></a>
+        <p class="micro"><b class="prazo">Termina em 30/11, às 23h59</b><br>O preço Black November vale até 30/11 às 23h59 ou até as 50 primeiras vendas, o que acontecer primeiro. Depois, o guia passa a custar R$ 99,90.<br>PDF no seu e-mail logo após o pagamento • Pix ou cartão • 7 dias de garantia</p>
       </div>
-      <button type="button" class="zerar" id="zerar">Zerar a prova</button>
-      <p class="log" id="log"></p>
-    </div>
   </div>
 </header>
 
-<main>
+<!-- BLOCO 2 — Tangibilidade: o guia por dentro -->
 <section>
   <div class="wrap">
-    <div class="cab"><div class="losango"><i>!</i></div><h2>A autoescola saiu. As dúvidas ficaram.</h2></div>
+    <h2>Veja o Passe de Primeira por dentro</h2>
+    <p style="margin-top:10px">Antes de comprar qualquer coisa, a gente quer ver como é. Estas são páginas reais do guia que você recebe.</p>
+    <div class="carrossel" aria-label="Páginas do guia">
+      <figure class="folha"><img src="img/folha-03.webp" width="760" height="667" loading="lazy" alt="Página O mapa das 7 etapas"><figcaption><b>Pare de travar no meio do caminho.</b>As 7 etapas na ordem certa, do curso grátis no app até a CNH digital. Pular a ordem é o jeito mais comum de perder tempo.</figcaption></figure>
+      <figure class="folha"><img src="img/folha-04.webp" width="760" height="667" loading="lazy" alt="Página Quanto vai custar de verdade"><figcaption><b>Saiba quanto vai gastar antes de começar.</b>Cada taxa, o teto nacional de R$ 180 para os exames médico e psicológico, e uma planilha para preencher com os valores da sua cidade.</figcaption></figure>
+      <figure class="folha"><img src="img/folha-05.webp" width="760" height="667" loading="lazy" alt="Página Como escolher o instrutor autônomo"><figcaption><b>Não caia em golpe de instrutor.</b>6 perguntas para fazer antes de fechar e os sinais de alerta, como quem promete "aprovação garantida".</figcaption></figure>
+      <figure class="folha"><img src="img/folha-06.webp" width="760" height="667" loading="lazy" alt="Página Prova teórica: estratégia para passar"><figcaption><b>Uma semana de estudo com começo, meio e fim.</b>O plano de 7 dias para a prova teórica e o teste que mostra que você está pronto.</figcaption></figure>
+      <figure class="folha"><img src="img/folha-07.webp" width="760" height="667" loading="lazy" alt="Página Prova prática: o sistema de pontos"><figcaption><b>Entenda a conta que o examinador faz.</b>Leve 1, média 2, grave 4, gravíssima 6. Passou de 10, reprovou. Exemplos prontos de quantos erros você aguenta.</figcaption></figure>
+      <figure class="folha"><img src="img/folha-09.webp" width="760" height="667" loading="lazy" alt="Página Os erros que mais reprovam"><figcaption><b>Saiba onde não pode vacilar.</b>A tabela com a gravidade de cada erro e como evitar os 4 campeões: placa PARE, faixa de pedestres, seta e distância.</figcaption></figure>
+      <figure class="folha"><img src="img/folha-10.webp" width="760" height="667" loading="lazy" alt="Página Roteiro do dia da prova prática"><figcaption><b>Chegue no dia sabendo o que fazer.</b>Do ajuste do banco ao estacionamento final, mais a respiração 4-4-6 contra o nervosismo.</figcaption></figure>
+      <figure class="folha"><img src="img/folha-11.webp" width="760" height="667" loading="lazy" alt="Página Se reprovar: o que fazer"><figcaption><b>Se der errado, você sabe o próximo passo.</b>Como pedir o resultado detalhado e remarcar.</figcaption></figure>
+    </div>
+    <p class="dica-arraste">Arraste para o lado para ver todas →</p>
+    <figure class="dispositivos"><img src="img/dispositivos.webp" width="1100" height="1000" loading="lazy" alt="O guia aberto num celular e num tablet"><figcaption>Dá para ler no celular ou imprimir.</figcaption></figure>
+  </div>
+</section>
+
+<!-- Prova com números reais (mantido da página atual) -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>A autoescola saiu. As dúvidas ficaram.</h2>
     <div class="dados">
       <div class="dado"><b>4,38 mi</b><p>cursos teóricos feitos no novo modelo até agosto de 2026. Muita gente entrou no processo sozinha.</p></div>
       <div class="dado"><b>3,69%</b><p>dos candidatos conseguiram concluir o processo em até um mês, o menor índice da série desde 2009.</p></div>
       <div class="dado"><b>2% → 6,8%</b><p>foi quanto subiu a reprovação na prova prática de carro entre 2019 e 2025.</p></div>
     </div>
     <p class="fonte">Fontes: balanço do Ministério dos Transportes (set/2026), levantamento divulgado em set/2026 e dados publicados pelo Estado de S. Paulo.</p>
-    <div class="texto" style="margin-top:28px">
-      <p>A nova regra deixou a CNH muito mais barata. O curso teórico ficou gratuito e as aulas práticas obrigatórias caíram de 20 para 2 horas.</p>
-      <p>Só que agora <strong>ninguém te diz o que fazer primeiro</strong>, quanto cobrar de instrutor é justo, nem como o examinador conta seus erros. É aí que muita gente perde tempo, gasta à toa ou reprova.</p>
-    </div>
   </div>
 </section>
 
+<!-- BLOCO 3 — Benefícios + urgência -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>O que muda para você</h2>
+    <ul class="lista">
+      <li><b>Começa pelo lugar certo.</b> Menos idas perdidas ao Detran.</li>
+      <li><b>Sabe quanto vai gastar</b> antes de pagar a primeira taxa.</li>
+      <li><b>Escolhe o instrutor sem cair em golpe</b>, com as perguntas certas, e não no achismo.</li>
+      <li><b>Estuda a teórica</b> com um plano de 7 dias.</li>
+      <li><b>Entende a avaliação por pontos</b> na prática, e não só "torce para não errar".</li>
+      <li><b>Lê em uma tarde.</b> O guia é curto de propósito.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="urgencia">
+  <div class="wrap">
+    <h2>Cada semana sem saber o próximo passo é taxa, deslocamento e tempo.</h2>
+    <p>Os exames médico e psicológico têm validade própria. Quem enrola entre uma etapa e outra pode ter que refazer e pagar de novo.</p>
+    <p class="faixa-preco">Black November: <b>R$ 19,90</b> até 30/11 • depois, R$ 99,90</p>
+    <a class="cta" href="#oferta" data-checkout style="max-width:460px;margin-top:14px"><span>Garantir minha cópia por <span style="white-space:nowrap">R$ 19,90</span></span></a>
+  </div>
+</section>
+
+<!-- BLOCO 4 — Filtro de público -->
 <section>
   <div class="wrap">
-    <div class="cab"><div class="losango"><i>→</i></div><h2>O que tem no guia</h2></div>
-    <ol class="etapas">
-      <li><div><b>O mapa das 7 etapas</b><span>Do app ao documento na mão, na ordem certa, sem ida perdida ao Detran.</span></div></li>
-      <li><div><b>Quanto custa de verdade</b><span>Cada taxa, o teto dos exames e uma planilha para montar o seu orçamento.</span></div></li>
-      <li><div><b>Como escolher o instrutor autônomo</b><span>6 perguntas antes de fechar e os sinais de golpe.</span></div></li>
-      <li><div><b>Plano de 7 dias para a prova teórica</b><span>O que estudar primeiro e o teste que mostra que você está pronto.</span></div></li>
-      <li><div><b>O sistema de pontos explicado</b><span>A regra do bolso: quantos erros você pode cometer e quais não pode.</span></div></li>
-      <li><div><b>Os erros que mais reprovam</b><span>Tabela com a gravidade de cada um e como evitar os 4 campeões.</span></div></li>
-      <li><div><b>Roteiro do dia da prova</b><span>Do ajuste do banco ao estacionamento final, mais 1 minuto contra o nervosismo.</span></div></li>
-      <li><div><b>Se reprovar</b><span>O que fazer para remarcar e acertar na segunda.</span></div></li>
-    </ol>
+    <h2>Ideal para você que…</h2>
+    <ul class="lista">
+      <li>vai tirar a primeira habilitação, de carro ou de moto;</li>
+      <li>quer economizar e não pagar pacote de autoescola;</li>
+      <li>já dirige, mas nunca tirou a carteira;</li>
+      <li>começou pelo aplicativo e travou no meio do caminho.</li>
+    </ul>
+    <h3 style="font-size:24px;margin-top:22px">Não é para você se…</h3>
+    <ul class="lista nao">
+      <li>procura "jeitinho" ou aprovação garantida (isso não existe);</li>
+      <li>quer pular as aulas práticas (elas continuam obrigatórias).</li>
+    </ul>
   </div>
 </section>
 
-<section>
-  <div class="wrap duas">
-    <div><p class="lista-titulo">É para você se</p>
-      <ul class="lista sim">
-        <li>Vai tirar a primeira habilitação, de carro ou moto</li>
-        <li>Quer economizar e não pagar pacote de autoescola</li>
-        <li>Já dirige, mas nunca tirou a carteira</li>
-        <li>Começou pelo app e travou no meio do caminho</li>
-      </ul></div>
-    <div><p class="lista-titulo">Não é para você se</p>
-      <ul class="lista nao">
-        <li>Procura "jeitinho" ou aprovação garantida. Isso não existe.</li>
-        <li>Quer substituir as aulas práticas. Elas continuam obrigatórias.</li>
-      </ul></div>
-  </div>
-</section>
-
-<section id="oferta">
+<!-- BLOCO 5 — Entregáveis, oferta final, garantia -->
+<section style="padding-top:0">
   <div class="wrap">
-    <div class="oferta">
+    <h2>Tudo o que você vai receber</h2>
+    <div class="pacote">
+      <img src="img/pacote.webp" width="1100" height="900" loading="lazy" alt="Capa do guia Passe de Primeira e duas páginas internas">
       <div>
-        <h2>Passe de Primeira</h2>
-        <p style="margin-top:10px;color:var(--suave)">Guia completo em PDF para ler no celular, atualizado com as regras da Resolução Contran nº 1.020/2025.</p>
-        <div class="extras">
-          <div class="extra"><b>Extra opcional no checkout:</b> Checklist do Dia da Prova, para imprimir ou deixar no celular.</div>
-          <div class="extra"><b>Extra opcional no checkout:</b> Guia da Moto, com tudo da categoria A.</div>
-        </div>
-        <div class="garantia"><div class="losango" style="flex-basis:30px;height:30px;border-width:2px"><i style="font-size:15px">7</i></div><p><b>7 dias de garantia.</b> Se não gostar, peça o reembolso dentro do prazo, como garante o Código de Defesa do Consumidor.</p></div>
-      </div>
-      <div class="preco">
-        <p class="de">pagamento único</p>
-        <p class="valor"><sup>R$</sup>19,90</p>
-        <a class="cta" href="#oferta" data-checkout>Comprar agora</a>
-        <p class="micro">Acesso imediato por e-mail</p>
+        <p><b>Guia Passe de Primeira (PDF)</b>, atualizado com a Resolução Contran nº 1.020/2025:</p>
+        <ol style="margin-top:10px">
+          <li>O mapa das 7 etapas</li>
+          <li>Quanto custa de verdade (+ planilha de orçamento)</li>
+          <li>Como escolher o instrutor autônomo</li>
+          <li>Plano de 7 dias para a prova teórica</li>
+          <li>O sistema de pontos explicado (a regra do bolso)</li>
+          <li>Os erros que mais reprovam</li>
+          <li>Roteiro do dia da prova prática</li>
+          <li>Se reprovar: o que fazer</li>
+        </ol>
+        <p class="extras">Extras opcionais no pagamento: Checklist do Dia da Prova e Guia da Moto (categoria A).</p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="oferta" class="oferta" style="padding-top:0">
   <div class="wrap">
-    <div class="cab"><div class="losango"><i>?</i></div><h2>Perguntas</h2></div>
-    <details><summary>Isso é oficial do governo ou do Detran?</summary><p>Não. É um material independente e educativo, que organiza as regras nacionais publicadas. O curso teórico oficial continua gratuito no aplicativo CNH do Brasil, e o guia te orienta a usá-lo.</p></details>
-    <details><summary>Serve para o meu estado?</summary><p>Sim. O guia segue as regras nacionais, que valem para todo o Brasil. Taxas e alguns detalhes da prova mudam por estado, e o guia mostra exatamente o que conferir no Detran da sua cidade.</p></details>
-    <details><summary>Como eu recebo?</summary><p>Assim que o pagamento é aprovado, você recebe o acesso ao PDF no e-mail que usou na compra. Dá para ler no celular ou imprimir.</p></details>
-    <details><summary>Serve para moto?</summary><p>As etapas e o sistema de pontos valem para carro e moto. Para a parte específica da moto, existe o Guia da Moto, que você pode adicionar no checkout.</p></details>
-    <details><summary>O guia garante que eu vou passar?</summary><p>Nenhum material sério garante aprovação. O que o guia faz é tirar você do escuro: você chega à prova sabendo como é avaliado e quais erros não pode cometer.</p></details>
+    <h2 style="text-align:center">Comece hoje pelo passo certo</h2>
+    <div class="cartao caixa-oferta">
+        <span class="lote">Black November • lote de 50 unidades</span>
+        <div class="caixa-linha">
+          <img src="img/celular-mapa.webp" width="620" height="1208" alt="O guia aberto no celular, na página O mapa das 7 etapas" loading="lazy">
+          <div>
+            <p class="nome">Guia Passe de Primeira • PDF completo</p>
+            <p class="preco">R$ 19,90<small>pagamento único • menos que um lanche</small></p>
+            <p class="depois">Depois da Black November: <b style="white-space:nowrap">R$ 99,90</b></p>
+          </div>
+        </div>
+        <a class="cta" href="#oferta" data-checkout><span>Garantir minha cópia por <span style="white-space:nowrap">R$ 19,90</span></span></a>
+        <p class="micro"><b class="prazo">Termina em 30/11, às 23h59</b><br>O preço Black November vale até 30/11 às 23h59 ou até as 50 primeiras vendas, o que acontecer primeiro. Depois, o guia passa a custar R$ 99,90.<br>PDF no seu e-mail logo após o pagamento • Pix ou cartão • 7 dias de garantia</p>
+      </div>
+    <div class="garantia" style="max-width:460px;margin-left:auto;margin-right:auto">
+      <div class="selo"><b>7</b><span>DIAS</span></div>
+      <p><b>7 dias de garantia incondicional.</b> Leu e achou que não ajudou? Peça o reembolso em até 7 dias, sem precisar explicar o motivo, como garante o Código de Defesa do Consumidor.</p>
+    </div>
   </div>
 </section>
-</main>
 
-<footer><div class="wrap">
-  <p><b style="color:#f3f4f1">Passe de Primeira</b> • Material educativo independente, vendido por Humberto Pereira.</p>
-  <p>Sem vínculo com o governo federal, a Senatran, o Ministério dos Transportes ou qualquer Detran. Regras e taxas podem mudar e variam por estado. Confirme sempre nos canais oficiais.</p>
-</div></footer>
+<!-- Perguntas frequentes (mantido: tira objeções e evita reembolso por confusão) -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Isso é oficial do Detran?</summary><p>Não. É um material independente e educativo, que organiza as regras nacionais. O curso teórico oficial continua grátis no app CNH do Brasil, e o guia te mostra como usá-lo.</p></details>
+    <details><summary>Serve para o meu estado?</summary><p>Sim. O guia segue as regras nacionais. Taxas e alguns detalhes mudam por estado, e o guia mostra o que conferir no Detran do seu estado.</p></details>
+    <details><summary>O que acontece depois da Black November?</summary><p>Quando o lote de 50 acabar, ou no fim de 30/11 (o que vier primeiro), o guia passa a custar R$ 99,90. Quem comprou no lote não paga nada a mais e continua com o guia.</p></details>
+    <details><summary>Não dá para achar isso tudo de graça na internet?</summary><p>As informações estão espalhadas e mudaram em 2025. O guia junta tudo na ordem certa, em 1 PDF que você lê numa tarde.</p></details>
+    <details><summary>Como eu recebo?</summary><p>No e-mail da compra, logo depois do pagamento aprovado.</p></details>
+    <details><summary>Serve para moto?</summary><p>As etapas e os pontos valem para carro e moto. A parte específica da moto está no Guia da Moto, que você pode adicionar no pagamento.</p></details>
+    <details><summary>O guia garante que eu passo?</summary><p>Nenhum material sério garante. O guia tira você do escuro: você chega à prova sabendo como é avaliado e quais erros não pode cometer.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias para pedir o reembolso.</p></details>
+    <a class="cta" href="#oferta" data-checkout style="max-width:460px;margin:22px auto 0"><span>Garantir minha cópia por <span style="white-space:nowrap">R$ 19,90</span></span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>Material independente e educativo. Não é publicação oficial do governo, do Detran nem da Senatran.</b></p>
+    <p style="margin-top:8px">Passe de Primeira • vendido por Humberto Pereira. Sem vínculo com o governo federal, a Senatran, o Ministério dos Transportes ou qualquer Detran. Regras e taxas podem mudar e variam por estado: confirme sempre nos canais oficiais.</p>
+  </div>
+</footer>
 
 <script>
 (function(){
   var CHECKOUT = "https://pay.kirvano.com/a5551ef3-a29f-4a97-be97-6104f94e556b";
-  if (CHECKOUT) document.querySelectorAll("[data-checkout]").forEach(function(a){a.href=CHECKOUT;a.target="_blank";a.rel="noopener"});
-  var med=document.getElementById("medidor"), pts=document.getElementById("pts"), ver=document.getElementById("ver"), log=document.getElementById("log");
-  for(var i=0;i<10;i++){med.appendChild(document.createElement("span"))}
-  var total=0, hist=[];
-  function draw(){
-    pts.textContent=total;
-    var s=med.children; for(var i=0;i<10;i++){s[i].className=i<Math.min(total,10)?"on":""}
-    var r=total>10; med.classList.toggle("estourou",r);
-    ver.textContent=r?"Reprovado":"Aprovado"; ver.classList.toggle("reprova",r);
-    log.textContent=hist.length?hist.join(" + ")+" = "+total:"";
-  }
-  document.querySelectorAll(".botoes button").forEach(function(b){
-    b.addEventListener("click",function(){total+=+b.dataset.p;hist.push(b.dataset.n);draw()})
-  });
-  document.getElementById("zerar").addEventListener("click",function(){total=0;hist=[];draw()});
-  draw();
+  // Repassa as UTMs do anúncio para o checkout da Kirvano (a venda fica marcada com o anúncio que a trouxe)
+  try {
+    var q=new URLSearchParams(location.search), out=new URLSearchParams();
+    ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","src","fbclid"].forEach(function(k){if(q.get(k))out.set(k,q.get(k))});
+    if (String(out)) CHECKOUT += (CHECKOUT.indexOf("?")<0?"?":"&") + String(out);
+  } catch(e) {}
+  // Prazo real da Black November: 30/11/2026 às 23h59 (horário de Brasília). Não reinicia.
+  try {
+    var FIM = new Date("2026-11-30T23:59:59-03:00").getTime(), agora = Date.now();
+    document.querySelectorAll(".prazo").forEach(function(el){
+      if (agora > FIM) { el.style.display = "none"; return; }
+      var dias = Math.floor((FIM - agora) / 86400000);
+      el.textContent = dias >= 2 ? "Termina em 30/11, às 23h59 • faltam " + dias + " dias" : (dias === 1 ? "Termina em 30/11, às 23h59 • falta 1 dia" : "Termina em 30/11, às 23h59 • últimas horas");
+    });
+  } catch(e) {}
+  document.querySelectorAll("[data-checkout]").forEach(function(a){a.href=CHECKOUT;a.target="_blank";a.rel="noopener"});
 })();
 </script>
-
 </body>
 </html>
