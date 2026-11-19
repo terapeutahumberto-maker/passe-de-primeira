@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Quiz do Presente de Natal</title>
+<meta name="description" content="Responda 3 perguntas e descubra um presente de Natal que combina com quem vai receber, dentro do seu orçamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap">
+<style>
+:root{
+  --vinho:#7d0a1d; --vermelho:#c8102e; --ouro:#e8b23a; --verde:#1e5631; --creme:#fff7ec;
+  --papel:#ffffff; --tinta:#2b1d1a; --suave:#6b5a52; --linha:#f0d9b5;
+  --titulo:"Fraunces",Georgia,serif; --texto:"Inter","Segoe UI",Arial,sans-serif;
+}
+html{color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0%,#b5112b 0%,var(--vinho) 60%);color:var(--tinta);font-family:var(--texto);font-size:17px;line-height:1.5}
+.topo{background:var(--verde);color:#fff;font-size:12px;font-weight:600;text-align:center;padding:6px 16px}
+.wrap{max-width:560px;margin:0 auto;padding:18px max(16px,env(safe-area-inset-left,0px)) 40px max(16px,env(safe-area-inset-right,0px))}
+.marca{color:var(--ouro);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px;text-align:center;margin:4px 0 12px}
+.cartao{background:var(--papel);border-radius:18px;padding:22px 18px;box-shadow:0 14px 36px rgba(0,0,0,.28)}
+h1,h2{font-family:var(--titulo);line-height:1.1;margin:0;color:var(--vinho);text-wrap:balance}
+h1{font-size:clamp(30px,8vw,40px)}
+h2{font-size:clamp(24px,6.4vw,30px)}
+p{margin:0}
+.sub{color:var(--suave);margin-top:10px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;padding:12px 14px;border:0;border-radius:12px;background:var(--vermelho);color:#fff;font:800 18px/1.15 var(--texto);text-transform:uppercase;text-decoration:none;cursor:pointer;box-shadow:0 4px 0 #8a0b20;margin-top:18px;text-align:center}
+.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #8a0b20}
+.btn.claro{background:#fff;color:var(--vinho);border:2px solid var(--linha);box-shadow:none;text-transform:none;font-weight:700;font-size:16px}
+.progresso{display:flex;gap:6px;margin-bottom:16px}
+.progresso span{flex:1;height:6px;border-radius:6px;background:var(--linha)}
+.progresso span.on{background:var(--ouro)}
+.passo{font-size:13px;font-weight:700;color:var(--suave);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.opcoes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.opcoes.uma{grid-template-columns:1fr}
+.op{min-height:56px;padding:12px;border-radius:12px;border:2px solid var(--linha);background:var(--creme);color:var(--tinta);font:600 16px/1.25 var(--texto);cursor:pointer;text-align:left}
+.op:hover,.op:focus-visible{border-color:var(--ouro);outline:none}
+.op small{display:block;font-weight:400;color:var(--suave);font-size:13px;margin-top:2px}
+.voltar{background:none;border:0;color:var(--suave);font:600 16px var(--texto);margin-top:10px;cursor:pointer;padding:12px 8px 12px 0;min-height:44px;display:inline-flex;align-items:center}
+.carregando{text-align:center;padding:40px 0}
+.carregando .gift{font-size:56px;animation:pula 0.8s ease-in-out infinite}
+@keyframes pula{50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){.carregando .gift{animation:none}}
+.res-tag{display:inline-block;background:var(--verde);color:#fff;font-size:13px;font-weight:700;border-radius:20px;padding:4px 12px}
+.ideia{background:var(--creme);border:2px solid var(--ouro);border-radius:14px;padding:16px;margin-top:14px}
+.ideia b{display:block;font-family:var(--titulo);font-size:22px;line-height:1.15;color:var(--vinho)}
+.ideia p{margin-top:8px;color:var(--tinta)}
+.fonte{font-size:12px;color:var(--suave);margin-top:6px}
+.extra{border:1px dashed var(--linha);border-radius:12px;padding:12px 14px;margin-top:12px}
+.extra b{color:var(--verde)}
+.frase{font-family:"Caveat",cursive;font-size:24px;line-height:1.2;color:var(--vermelho);margin-top:6px}
+.dado{background:#eef6ef;border-radius:12px;padding:12px 14px;margin-top:12px;font-size:15px}
+.oferta{margin-top:18px;border-top:2px solid var(--linha);padding-top:16px}
+.oferta ul{margin:10px 0 0;padding-left:20px}
+.oferta li{margin-bottom:4px}
+.preco{font-family:var(--titulo);font-weight:800;font-size:40px;color:var(--verde);margin-top:10px;line-height:1}
+.preco small{font-family:var(--texto);font-size:14px;font-weight:500;color:var(--suave)}
+.micro{font-size:13px;color:var(--suave);text-align:center;margin-top:8px}
+.rodape{color:#f3c9b9;font-size:12px;text-align:center;margin-top:18px}
+.rodape a{color:#fff;display:inline-block;padding:12px 4px;font-size:14px}
+[hidden]{display:none!important}
+</style>
+<!-- PIXEL: colar aqui o código do pixel próprio deste produto quando ele for criado. -->
+</head>
+<body>
+<div class="topo">Material educativo independente. Sem ligação com lojas ou marcas.</div>
+<main class="wrap">
+  <p class="marca">Manual do Presente de Natal</p>
+
+  <!-- INÍCIO -->
+  <section class="cartao" id="tela-inicio">
+    <h1>Descubra o presente ideal em 1 minuto 🎁</h1>
+    <p class="sub">Responda 3 perguntas rápidas e receba uma sugestão de presente que combina com a pessoa, dentro do seu orçamento. É grátis.</p>
+    <button class="btn" type="button" id="comecar">Começar o quiz</button>
+    <p class="micro">As sugestões saem do Manual do Presente de Natal 2026, com ideias baseadas em pesquisas.</p>
+  </section>
+
+  <!-- PERGUNTA 1 -->
+  <section class="cartao" id="tela-p1" hidden>
+    <div class="progresso"><span class="on"></span><span></span><span></span></div>
+    <p class="passo">Pergunta 1 de 3</p>
+    <h2>Para quem é o presente?</h2>
+    <div class="opcoes" id="op-pessoa"></div>
+    <button class="voltar" type="button" data-voltar="tela-inicio">← Voltar</button>
+  </section>
+
+  <!-- PERGUNTA 2 -->
+  <section class="cartao" id="tela-p2" hidden>
+    <div class="progresso"><span class="on"></span><span class="on"></span><span></span></div>
+    <p class="passo">Pergunta 2 de 3</p>
+    <h2>Quanto você quer gastar?</h2>
+    <div class="opcoes uma" id="op-faixa"></div>
+    <button class="voltar" type="button" data-voltar="tela-p1">← Voltar</button>
+  </section>
+
+  <!-- PERGUNTA 3 -->
+  <section class="cartao" id="tela-p3" hidden>
+    <div class="progresso"><span class="on"></span><span class="on"></span><span class="on"></span></div>
+    <p class="passo">Pergunta 3 de 3</p>
+    <h2 id="p3-titulo">Qual desses combina mais com a pessoa?</h2>
+    <div class="opcoes uma" id="op-estilo"></div>
+    <button class="voltar" type="button" data-voltar="tela-p2">← Voltar</button>
+  </section>
+
+  <!-- CARREGANDO -->
+  <section class="cartao carregando" id="tela-carregando" hidden>
+    <div class="gift" aria-hidden="true">🎁</div>
+    <h2 style="margin-top:12px">Escolhendo o presente…</h2>
+    <p class="sub">Cruzando a pessoa, o orçamento e o estilo com as ideias do manual.</p>
+  </section>
+
+  <!-- RESULTADO -->
+  <section class="cartao" id="tela-resultado" hidden>
+    <span class="res-tag" id="r-tag"></span>
+    <h2 style="margin-top:10px">Sua sugestão de presente</h2>
+    <div class="ideia">
+      <b id="r-ideia"></b>
+      <p id="r-pq"></p>
+      <p class="fonte" id="r-fonte"></p>
+    </div>
+    <div class="extra" id="r-extra-box">
+      <p><b>Outra opção na mesma faixa:</b> <span id="r-extra"></span></p>
+    </div>
+    <div class="extra">
+      <p><b>Frase para o cartão:</b></p>
+      <p class="frase" id="r-frase"></p>
+    </div>
+    <div class="dado">
+      <p><b>Você sabia?</b> <span id="r-dado"></span></p>
+      <p class="fonte" id="r-dado-fonte"></p>
+    </div>
+
+    <div class="oferta">
+      <h2>Quer ver as outras ideias?</h2>
+      <p class="sub">O <b>Manual do Presente de Natal</b> tem tudo para resolver a lista inteira deste Natal:</p>
+      <ul>
+        <li id="r-mais"></li>
+        <li>90 ideias para mãe, pai, sogros, avós, amor, amigos, crianças e amigo secreto</li>
+        <li>10 kits prontos e 12 presentes feitos em casa, com custo e passo a passo</li>
+        <li>8 truques de embrulho e 30 frases para o cartão</li>
+      </ul>
+      <p class="preco">R$ 14,90 <small>pagamento único</small></p>
+      <a class="btn" id="r-comprar" href="index.html#oferta" data-checkout>Quero o Manual completo</a>
+      <p class="micro">PDF no seu e-mail logo após o pagamento • 7 dias de garantia</p>
+      <button class="btn claro" type="button" id="refazer">Fazer o quiz para outra pessoa</button>
+    </div>
+  </section>
+
+  <p class="rodape">Material educativo independente, vendido por Humberto Pereira. As faixas de preço são estimativas e mudam conforme a loja e a cidade. <a href="index.html">Conheça o Manual</a></p>
+</main>
+
+<script src="quiz-dados.js"></script>
+<script>
+(function(){
+  // Link do checkout da Kirvano: preencher quando o produto for criado. Sem ele, o botão leva para a página de vendas.
+  var CHECKOUT = "";
+  var PAGINA_VENDAS = "index.html";
+
+  var Q = window.QUIZ || {};
+  var DADO_RESERVA = { texto: "8 em cada 10 brasileiros pesquisam na internet antes de escolher o presente de Natal.", fonte: "Google/Ipsos, Natal 2025" };
+  var estado = { pessoa: null, faixa: null, estilo: null };
+
+  var PESSOAS = [
+    ["mae","Mãe"],["pai","Pai"],["esposa","Esposa ou namorada"],["marido","Marido ou namorado"],
+    ["sogra","Sogra"],["sogro","Sogro"],["avo_f","Avó"],["avo_m","Avô"],["amiga","Amiga"],["amigo","Amigo"],
+    ["cri35","Criança de 3 a 5 anos"],["cri612","Criança de 6 a 12 anos"],["cri1314","Adolescente de 13 e 14 anos"],["secreto","Amigo secreto ou colega"]
+  ];
+  var FAIXAS = [["até R$ 30","Até R$ 30","Lembrança caprichada"],["até R$ 60","Até R$ 60","Presente médio"],["até R$ 100","Até R$ 100","Presente especial"]];
+  var ESTILOS = [
+    ["util","Gosta de coisas úteis no dia a dia"],
+    ["cuidado","Adora se cuidar"],
+    ["casa","Curte a casa, a cozinha ou um bom café"],
+    ["lembranca","É uma pessoa emotiva, que guarda lembranças"],
+    ["experiencia","Gosta de sair e viver coisas novas"]
+  ];
+
+  function $(id){ return document.getElementById(id); }
+  function mostrar(id){
+    ["tela-inicio","tela-p1","tela-p2","tela-p3","tela-carregando","tela-resultado"].forEach(function(t){ $(t).hidden = (t !== id); });
+    try { window.scrollTo({top:0, behavior:"smooth"}); } catch(e) { window.scrollTo(0,0); }
+  }
+  function track(evento, dados){ try { if (window.fbq) fbq("trackCustom", evento, dados || {}); } catch(e) {} }
+
+  function botoes(container, lista, aoClicar){
+    container.innerHTML = "";
+    lista.forEach(function(item){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "op";
+      b.innerHTML = item[1] + (item[2] ? "<small>" + item[2] + "</small>" : "");
+      b.addEventListener("click", function(){ aoClicar(item[0]); });
+      container.appendChild(b);
+    });
+  }
+
+  function faixaReal(pessoa, faixa){
+    if (pessoa === "secreto") return faixa === "até R$ 30" ? "até R$ 30" : "até R$ 50";
+    return faixa;
+  }
+
+  function escolher(){
+    var p = Q[estado.pessoa]; if (!p) return null;
+    var fx = faixaReal(estado.pessoa, estado.faixa);
+    var naFaixa = p.ideias.filter(function(i){ return i.faixa === fx; });
+    if (!naFaixa.length) naFaixa = p.ideias.slice();
+    var principal = naFaixa[0];
+    if (estado.estilo) {
+      var bate = naFaixa.filter(function(i){ return i.estilo === estado.estilo; });
+      if (bate.length) principal = bate[0];
+    }
+    var outra = naFaixa.filter(function(i){ return i !== principal; })[0] || null;
+    return { p: p, principal: principal, outra: outra, fx: fx };
+  }
+
+  function resultado(){
+    var r = escolher(); if (!r) { mostrar("tela-inicio"); return; }
+    $("r-tag").textContent = r.p.rotulo + " • " + r.fx;
+    $("r-ideia").textContent = r.principal.ideia;
+    $("r-pq").textContent = r.principal.pq;
+    $("r-fonte").textContent = r.principal.fonte ? "Fonte: " + r.principal.fonte : "";
+    $("r-fonte").hidden = !r.principal.fonte;
+    if (r.outra) { $("r-extra").textContent = r.outra.ideia; $("r-extra-box").hidden = false; }
+    else { $("r-extra-box").hidden = true; }
+    $("r-frase").textContent = "“" + r.p.frase + "”";
+    // Evita repetir o mesmo dado da ideia no "Você sabia?"
+    var dado = r.p.dado;
+    if (r.principal.fonte && r.principal.fonte === dado.fonte) dado = DADO_RESERVA;
+    $("r-dado").textContent = dado.texto;
+    $("r-dado-fonte").textContent = "Fonte: " + dado.fonte;
+    var mostradas = r.outra ? 2 : 1;
+    var resto = r.p.ideias.length - mostradas;
+    $("r-mais").innerHTML = "<b>Mais " + resto + " ideias para " + (estado.pessoa === "secreto" ? "amigo secreto e colegas" : r.p.rotulo.toLowerCase()) + "</b> no manual";
+    mostrar("tela-resultado");
+    track("QuizResultado", { pessoa: estado.pessoa, faixa: estado.faixa });
+  }
+
+  botoes($("op-pessoa"), PESSOAS, function(v){ estado.pessoa = v; estado.estilo = null; mostrar("tela-p2"); });
+  botoes($("op-faixa"), FAIXAS, function(v){
+    estado.faixa = v;
+    var grupo = (Q[estado.pessoa] || {}).grupo;
+    if (grupo === "adulto") {
+      botoes($("op-estilo"), ESTILOS, function(s){ estado.estilo = s; carregar(); });
+      mostrar("tela-p3");
+    } else {
+      estado.estilo = null; carregar();
+    }
+  });
+
+  function carregar(){ mostrar("tela-carregando"); setTimeout(resultado, 1400); }
+
+  $("comecar").addEventListener("click", function(){ mostrar("tela-p1"); track("QuizInicio"); });
+  $("refazer").addEventListener("click", function(){ estado = {pessoa:null,faixa:null,estilo:null}; mostrar("tela-p1"); });
+  document.querySelectorAll("[data-voltar]").forEach(function(b){
+    b.addEventListener("click", function(){ mostrar(b.getAttribute("data-voltar")); });
+  });
+
+  // Repassa as UTMs do anúncio para o checkout (ou para a página de vendas)
+  try {
+    var q = new URLSearchParams(location.search), out = new URLSearchParams();
+    ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","src","fbclid"].forEach(function(k){ if (q.get(k)) out.set(k, q.get(k)); });
+    var destino = CHECKOUT || PAGINA_VENDAS;
+    if (String(out)) destino += (destino.indexOf("?") < 0 ? "?" : "&") + String(out);
+    if (!CHECKOUT) destino += "#oferta";
+    document.querySelectorAll("[data-checkout]").forEach(function(a){ a.href = destino; if (CHECKOUT) { a.target = "_blank"; a.rel = "noopener"; } });
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>

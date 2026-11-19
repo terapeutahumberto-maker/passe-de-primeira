@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Manual do Presente de Natal</title>
+<meta name="description" content="Não sabe o que dar de presente neste Natal? 112 ideias e kits que surpreendem quem recebe, sem você gastar muito. Separadas por pessoa e por faixa de preço.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap">
+<style>
+:root{
+  --vinho:#7d0a1d; --vermelho:#c8102e; --ouro:#e8b23a; --verde:#1e5631; --creme:#fff7ec;
+  --papel:#ffffff; --tinta:#2b1d1a; --suave:#6b5a52; --linha:#f0d9b5;
+  --titulo:"Fraunces",Georgia,serif; --texto:"Inter","Segoe UI",Arial,sans-serif;
+}
+html{color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--tinta);font-family:var(--texto);font-size:17px;line-height:1.55}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--titulo);line-height:1.08;margin:0;text-wrap:balance}
+h2{font-size:clamp(28px,5.4vw,42px);color:var(--vinho)}
+p{margin:0}
+section{padding-block:44px}
+.aviso{background:var(--verde);color:#fff;font-size:13px;font-weight:600;text-align:center;padding-block:7px}
+.mao{font-family:"Caveat",cursive;font-size:24px;color:var(--vermelho)}
+
+.hero{background:radial-gradient(circle at 50% 20%,#b5112b 0%,var(--vinho) 75%);color:#fff7e8;padding-block:18px 34px}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:center}
+.hero .grid>*{min-width:0}
+.eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--ouro)}
+.hero h1{font-size:clamp(34px,8.6vw,64px);font-weight:800;margin-top:6px}
+.hero h1 em{font-style:normal;color:var(--ouro)}
+.hero .sub{margin-top:10px;font-size:17px;color:#ffe9d6}
+.hero .mock{margin:8px auto 0;width:100%;max-width:460px}
+.cartao{background:var(--papel);color:var(--tinta);border-radius:16px;padding:16px;box-shadow:0 12px 32px rgba(0,0,0,.25);border:3px solid var(--ouro);max-width:460px;margin:0 auto}
+.cartao .nome{font-weight:700;font-size:15px}
+.preco{font-family:var(--titulo);font-weight:800;font-size:48px;line-height:1;color:var(--verde);margin-top:6px}
+.preco small{display:block;font-family:var(--texto);font-size:15px;font-weight:500;color:var(--suave);margin-top:4px}
+.cta{display:flex;justify-content:center;align-items:center;text-align:center;width:100%;min-height:56px;margin-top:12px;padding:12px 14px;border-radius:12px;background:var(--vermelho);color:#fff;font-weight:800;font-size:clamp(17px,4.6vw,20px);line-height:1.15;text-transform:uppercase;text-decoration:none;box-shadow:0 4px 0 #8a0b20}
+.cta:active{transform:translateY(2px);box-shadow:0 2px 0 #8a0b20}
+.micro{font-size:13px;color:var(--suave);margin-top:8px;text-align:center}
+.quiz-link{display:block;max-width:460px;margin:12px auto 0;text-align:center;color:#fff7e8;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:3px}
+.selos{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.selos span{border:1px solid var(--ouro);border-radius:20px;padding:5px 11px;font-size:13px;font-weight:600}
+@media (min-width:860px){.hero .grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:36px}}
+
+.dados{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px}
+.dado{background:var(--papel);border-left:6px solid var(--vermelho);border-radius:10px;padding:14px 16px}
+.dado b{font-family:var(--titulo);font-size:32px;color:var(--vermelho);display:block;line-height:1.05}
+.dado .f{font-size:12px;color:var(--suave);margin-top:6px}
+@media (min-width:760px){.dados{grid-template-columns:repeat(2,1fr)}}
+
+.carrossel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;margin-top:20px;-webkit-overflow-scrolling:touch}
+.folha{flex:0 0 82%;max-width:360px;scroll-snap-align:start;background:var(--papel);border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.12);margin:0}
+.folha img{border-bottom:1px solid var(--linha)}
+.folha figcaption{padding:12px 14px 14px;font-size:15px}
+.folha figcaption b{display:block;font-family:var(--titulo);font-size:20px;line-height:1.15;margin-bottom:4px;color:var(--vinho)}
+.dica-arraste{font-size:13px;color:var(--suave)}
+
+.lista{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.lista li{background:var(--papel);border-radius:10px;padding:12px 14px 12px 46px;position:relative}
+.lista li::before{content:"✓";position:absolute;left:14px;top:11px;width:22px;height:22px;border-radius:50%;background:var(--verde);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.lista.nao li::before{content:"✕";background:var(--vermelho)}
+.escuro{background:var(--vinho);color:#fff7e8}
+.escuro h2{color:#fff7e8}
+.escuro p{color:#ffe9d6;margin-top:12px}
+.garantia{display:flex;gap:14px;align-items:flex-start;background:var(--papel);border-radius:12px;padding:16px;margin:18px auto 0;max-width:460px}
+.selo{flex:0 0 64px;height:64px;border-radius:50%;background:var(--verde);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;line-height:1}
+.selo b{font-size:26px}.selo span{font-size:11px}
+details{background:var(--papel);border-radius:10px;padding:12px 14px;margin-top:10px}
+summary{font-weight:700;cursor:pointer}
+details p{margin-top:8px}
+footer{background:#2b1d1a;color:#cdbcb3;font-size:13px;padding-block:24px}
+footer a{color:#cdbcb3}
+</style>
+<!-- PIXEL: colar aqui o código do pixel próprio deste produto quando ele for criado (não usar o pixel do Passe de Primeira). -->
+</head>
+<body>
+<div class="aviso"><div class="wrap">Material educativo independente. Sem ligação com as lojas, marcas ou institutos citados.</div></div>
+
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Natal 2026 • Guia em PDF</span>
+      <h1>Não sabe o que dar de presente <em>neste Natal?</em></h1>
+      <p class="sub">Preparamos 112 ideias e kits que surpreendem quem recebe, sem você gastar muito.</p>
+      <div class="cartao" style="margin-top:16px">
+        <p class="nome">Manual do Presente de Natal 2026 • PDF</p>
+        <p class="preco">R$ 14,90<small>pagamento único</small></p>
+        <a class="cta" href="#oferta" data-checkout><span>Quero o Manual do Presente</span></a>
+        <p class="micro">PDF no seu e-mail logo após o pagamento • Pix ou cartão • 7 dias de garantia</p>
+      </div>
+      <a class="quiz-link" href="quiz.html" data-quiz>🎁 Ainda em dúvida? Faça o quiz grátis e descubra um presente em 1 minuto →</a>
+    </div>
+    <div>
+      <img class="mock" src="img/mockup.webp" width="1000" height="860" alt="O Manual do Presente de Natal aberto num celular, com duas páginas internas ao lado">
+      <p class="sub" style="text-align:center">Separadas por pessoa e por faixa de preço, com dados de pesquisas sobre o que mães, pais e crianças gostam de ganhar.</p>
+      <div class="selos" style="justify-content:center"><span>Até R$ 30, R$ 60 e R$ 100</span><span>10 kits prontos</span><span>12 feitos em casa</span><span>30 frases para o cartão</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Você sabia?</h2>
+    <p style="margin-top:10px">Presente bom não é o mais caro. É o que combina com quem recebe. As pesquisas mostram o que faz diferença:</p>
+    <div class="dados">
+      <div class="dado"><b>8 em cada 10</b>brasileiros pesquisam na internet antes de escolher o presente de Natal. Você não está sozinho nessa dúvida.<p class="f">Fonte: Google/Ipsos, Natal 2025</p></div>
+      <div class="dado"><b>52% x 22%</b>52% dos pais queriam ganhar um eletrônico, mas só 22% de quem ia presentear pensava em dar um.<p class="f">Fonte: Google, pesquisa Dia dos Pais 2023</p></div>
+      <div class="dado"><b>46%</b>dos pais gostariam de ganhar uma experiência, como um passeio ou ingresso.<p class="f">Fonte: Ipsos, Dia dos Pais 2025</p></div>
+      <div class="dado"><b>58%</b>das pessoas valorizam presentes que criam lembranças especiais.<p class="f">Fonte: Consumoteca para Natura, 2025</p></div>
+    </div>
+    <p class="mao" style="margin-top:16px">O manual junta esses dados com ideias práticas para você escolher melhor.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Veja o manual por dentro</h2>
+    <p style="margin-top:10px">Estas são páginas reais do PDF que você recebe:</p>
+    <div class="carrossel" aria-label="Páginas do manual">
+      <figure class="folha"><img src="img/numeros.webp" width="760" height="667" loading="lazy" alt="Página O que os números dizem"><figcaption><b>O que as pesquisas dizem.</b>Os dados sobre o que agrada de verdade, com a fonte de cada número.</figcaption></figure>
+      <figure class="folha"><img src="img/ela.webp" width="760" height="667" loading="lazy" alt="Página com ideias para esposa e sogra"><figcaption><b>Ideias por pessoa e por preço.</b>Mãe, esposa, sogra, avó, amiga, pai, marido, sogro, avô, amigo. Cada ideia diz por que surpreende.</figcaption></figure>
+      <figure class="folha"><img src="img/criancas.webp" width="760" height="667" loading="lazy" alt="Página com ideias para crianças por idade"><figcaption><b>Crianças por idade.</b>De 3 a 5, de 6 a 12 e 13 e 14 anos, com o que cada idade mais pede.</figcaption></figure>
+      <figure class="folha"><img src="img/kits.webp" width="760" height="667" loading="lazy" alt="Página 10 kits de presente"><figcaption><b>10 kits prontos.</b>O que vai em cada kit, quanto custa e como montar para parecer caro.</figcaption></figure>
+      <figure class="folha"><img src="img/feitos-em-casa.webp" width="760" height="667" loading="lazy" alt="Página 12 presentes feitos em casa"><figcaption><b>12 presentes feitos em casa.</b>Biscoito no pote, vela aromática, geleia, álbum de fotos e mais, com custo e passo a passo.</figcaption></figure>
+      <figure class="folha"><img src="img/embrulho.webp" width="760" height="667" loading="lazy" alt="Página embrulho barato que parece de loja"><figcaption><b>Embrulho que parece de loja.</b>8 truques baratos para o presente impressionar antes de ser aberto.</figcaption></figure>
+      <figure class="folha"><img src="img/frases.webp" width="760" height="667" loading="lazy" alt="Página 30 frases para o cartão"><figcaption><b>30 frases para o cartão.</b>Para mãe, pai, amor, avós, amigos, crianças e colegas. É o detalhe que emociona.</figcaption></figure>
+    </div>
+    <p class="dica-arraste">Arraste para o lado para ver todas →</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>O que muda para você</h2>
+    <ul class="lista">
+      <li><b>Acaba a dúvida em 1 minuto.</b> Você vai direto na pessoa e na faixa de preço.</li>
+      <li><b>Não gasta à toa.</b> Ideias até R$ 30, R$ 60 e R$ 100, para caber no seu bolso.</li>
+      <li><b>Presente com cara de caro.</b> Kits e embrulhos que valorizam o que é simples.</li>
+      <li><b>Mais chance de agradar.</b> Com dados de pesquisas sobre o que mães, pais e crianças gostam de ganhar.</li>
+      <li><b>Emociona.</b> 30 frases prontas para o cartão, porque o bilhete é o que fica na memória.</li>
+      <li><b>Resolve o amigo secreto também.</b> 12 ideias neutras até R$ 50.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="escuro">
+  <div class="wrap">
+    <h2>O Natal é dia 25. Escolha antes da correria.</h2>
+    <p>Quem decide cedo tem mais tempo para comparar preço, montar o kit com calma e evitar a fila de última hora.</p>
+    <a class="cta" href="#oferta" data-checkout style="max-width:460px;margin-top:18px"><span>Quero o Manual por R$ 14,90</span></a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>É para você se…</h2>
+    <ul class="lista">
+      <li>tem uma lista de pessoas para presentear e não sabe por onde começar;</li>
+      <li>quer agradar sem estourar o orçamento de fim de ano;</li>
+      <li>vai participar de amigo secreto na família ou no trabalho;</li>
+      <li>gosta de dar presente feito com as próprias mãos.</li>
+    </ul>
+    <h3 style="font-size:24px;margin-top:22px;color:var(--vinho)">Não é para você se…</h3>
+    <ul class="lista nao">
+      <li>procura uma loja ou links para comprar (o manual dá ideias; você compra onde quiser);</li>
+      <li>quer o preço exato de cada produto (as faixas são estimativas e mudam conforme a loja e a cidade).</li>
+    </ul>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Tudo o que você vai receber</h2>
+    <ul class="lista">
+      <li><b>90 ideias por pessoa</b>: para ela, para ele e para crianças por idade, em 3 faixas de preço</li>
+      <li><b>12 ideias para amigo secreto e colegas</b>, até R$ 50 (já contadas nas 90)</li>
+      <li><b>10 kits de presente</b>, com o que vai dentro, o custo estimado e como montar</li>
+      <li><b>12 presentes feitos em casa</b>, com custo e passo a passo</li>
+      <li><b>8 truques de embrulho</b> barato que parece de loja</li>
+      <li><b>30 frases para o cartão</b>, separadas por pessoa</li>
+      <li><b>A regra dos 3 Ps</b> para escolher em 1 minuto e os dados das pesquisas com fonte</li>
+    </ul>
+    <p style="margin-top:12px;font-size:15px;color:var(--suave)">PDF de 29 páginas, para ler no celular ou imprimir.</p>
+  </div>
+</section>
+
+<section id="oferta" style="padding-top:0">
+  <div class="wrap">
+    <h2 style="text-align:center">Resolva os presentes deste Natal hoje</h2>
+    <div class="cartao" style="margin-top:18px;text-align:center">
+      <p class="nome">Manual do Presente de Natal 2026 • PDF</p>
+      <p class="preco">R$ 14,90<small>pagamento único</small></p>
+      <a class="cta" href="#oferta" data-checkout><span>Quero o Manual do Presente</span></a>
+      <p class="micro">Acesso imediato por e-mail • Pix ou cartão</p>
+    </div>
+    <div class="garantia">
+      <div class="selo"><b>7</b><span>DIAS</span></div>
+      <p><b>7 dias de garantia.</b> Leu e achou que não ajudou? Peça o reembolso em até 7 dias, sem precisar explicar o motivo, como garante o Código de Defesa do Consumidor.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Como eu recebo?</summary><p>No e-mail da compra, logo depois do pagamento aprovado. É um PDF para ler no celular ou imprimir.</p></details>
+    <details><summary>O manual tem o preço exato dos presentes?</summary><p>Não. As ideias vêm em faixas (até R$ 30, R$ 60 e R$ 100), que são estimativas de referência. O preço real muda conforme a loja, a cidade e a marca.</p></details>
+    <details><summary>Tem link para comprar os presentes?</summary><p>Não. O manual dá as ideias e você compra onde preferir, na loja do seu bairro ou na internet.</p></details>
+    <details><summary>De onde vêm os dados?</summary><p>De pesquisas publicadas por Google, Ipsos, Hibou, Kids Corp, Globo e outros. Cada número indica de qual pesquisa veio, e a lista completa, com o ano e o link de cada uma, está no fim do manual.</p></details>
+    <details><summary>Serve para amigo secreto?</summary><p>Sim. Tem uma parte só com 12 ideias neutras até R$ 50 e frases para colegas.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias para pedir o reembolso.</p></details>
+    <a class="cta" href="#oferta" data-checkout style="max-width:460px;margin:22px auto 0"><span>Quero o Manual por R$ 14,90</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Manual do Presente de Natal 2026 • material educativo independente, vendido por Humberto Pereira. Sem ligação com as lojas, marcas ou institutos de pesquisa citados. Faixas de preço e custos são estimativas e podem variar.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Link do checkout da Kirvano: preencher quando o produto for criado.
+  var CHECKOUT = "";
+  try {
+    var q=new URLSearchParams(location.search), out=new URLSearchParams();
+    ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","src","fbclid"].forEach(function(k){if(q.get(k))out.set(k,q.get(k))});
+    if (CHECKOUT && String(out)) CHECKOUT += (CHECKOUT.indexOf("?")<0?"?":"&") + String(out);
+  } catch(e) {}
+  try { var qs = location.search; if (qs) document.querySelectorAll("[data-quiz]").forEach(function(a){ a.href = "quiz.html" + qs; }); } catch(e) {}
+  if (CHECKOUT) document.querySelectorAll("[data-checkout]").forEach(function(a){a.href=CHECKOUT;a.target="_blank";a.rel="noopener"});
+})();
+</script>
+</body>
+</html>
