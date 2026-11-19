@@ -74,7 +74,22 @@ details p{margin-top:8px}
 footer{background:#2b1d1a;color:#cdbcb3;font-size:13px;padding-block:24px}
 footer a{color:#cdbcb3}
 </style>
-<!-- PIXEL: colar aqui o código do pixel próprio deste produto quando ele for criado (não usar o pixel do Passe de Primeira). -->
+<script>
+// Pixel da Meta da CONTA NOVA do Manual do Presente. Cole o número do pixel entre as aspas.
+// Enquanto estiver vazio, nada é enviado (não use o pixel do Passe de Primeira).
+window.PIXEL_ID = "";
+(function(){
+  if (!window.PIXEL_ID) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', window.PIXEL_ID);
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {content_name: 'Manual do Presente de Natal', value: 14.90, currency: 'BRL'});
+})();
+</script>
 </head>
 <body>
 <div class="aviso"><div class="wrap">Material educativo independente. Sem ligação com as lojas, marcas ou institutos citados.</div></div>

@@ -61,7 +61,22 @@ p{margin:0}
 .rodape a{color:#fff;display:inline-block;padding:12px 4px;font-size:14px}
 [hidden]{display:none!important}
 </style>
-<!-- PIXEL: colar aqui o código do pixel próprio deste produto quando ele for criado. -->
+<script>
+// Pixel da Meta da CONTA NOVA do Manual do Presente. Cole o número do pixel entre as aspas.
+// Enquanto estiver vazio, nada é enviado (não use o pixel do Passe de Primeira).
+window.PIXEL_ID = "";
+(function(){
+  if (!window.PIXEL_ID) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', window.PIXEL_ID);
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {content_name: 'Quiz do Presente'});
+})();
+</script>
 </head>
 <body>
 <div class="topo">Material educativo independente. Sem ligação com lojas ou marcas.</div>
@@ -181,6 +196,9 @@ p{margin:0}
     try { window.scrollTo({top:0, behavior:"smooth"}); } catch(e) { window.scrollTo(0,0); }
   }
   function track(evento, dados){ try { if (window.fbq) fbq("trackCustom", evento, dados || {}); } catch(e) {} }
+  // Evento padrão de cadastro: dispara UMA vez por visita, quando a pessoa recebe a sugestão grátis.
+  var leadEnviado = false;
+  function lead(dados){ try { if (window.fbq && !leadEnviado) { fbq("track", "Lead", dados || {}); leadEnviado = true; } } catch(e) {} }
 
   function botoes(container, lista, aoClicar){
     container.innerHTML = "";
@@ -232,6 +250,7 @@ p{margin:0}
     $("r-mais").innerHTML = "<b>Mais " + resto + " ideias para " + (estado.pessoa === "secreto" ? "amigo secreto e colegas" : r.p.rotulo.toLowerCase()) + "</b> no manual";
     mostrar("tela-resultado");
     track("QuizResultado", { pessoa: estado.pessoa, faixa: estado.faixa });
+    lead({ content_name: "Sugestao do quiz", content_category: estado.pessoa });
   }
 
   botoes($("op-pessoa"), PESSOAS, function(v){ estado.pessoa = v; estado.estilo = null; mostrar("tela-p2"); });
